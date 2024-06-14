@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Geldbörse App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Meine Geldbörse App</h1>
+        
+        <div class="forms-container">
+            <div class="form-section">
+                <h2>Einkommen Hinzufügen</h2>
+                <form id="income-form">
+                    <div class="form-row">
+                        <input type="date" id="income-date" required>
+                        <input type="number" id="income-amount" step="0.01" placeholder="Betrag (€)" required>
+                    </div>
+                    <input type="text" id="income-name" placeholder="Einkommensquelle" required>
+                    <button type="submit">Hinzufügen</button>
+                </form>
+            </div>
+
+            <div class="form-section">
+                <h2>Ausgaben Hinzufügen</h2>
+                <form id="expense-form">
+                    <div class="form-row">
+                        <input type="date" id="expense-date" required>
+                        <input type="number" id="expense-amount" step="0.01" placeholder="Betrag (€)" required>
+                    </div>
+                    <input type="text" id="expense-name" placeholder="Ausgabenquelle" required>
+                    <button type="submit">Hinzufügen</button>
+                </form>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>Beschreibung</th>
+                    <th>Einkommen (€)</th>
+                    <th>Ausgaben (€)</th>
+                    <th>Löschen</th>
+                </tr>
+            </thead>
+            <tbody id="transaction-list">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2" class="bold">Summe:</td>
+                    <td id="total-income" class="bold">0 €</td>
+                    <td id="total-expense" class="bold">0 €</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="container1">
+            <div class="content">
+                <!-- <div id="chart-container">
+                    <div class="chart_div" id="chart_div"></div>
+                </div> -->
+                <div class="summary">
+                    <div class="summary-item">
+                        <p class="bold1">Gesamteinnahmen:</p>
+                        <p class="bold1" id="total-income-summary">0 €</p>
+                    </div>
+                    <div class="summary-item">
+                        <p class="bold2">Gesamtausgaben:</p>
+                        <p class="bold2" id="total-expense-summary">0 €</p>
+                    </div>
+                    <div class="summary-item">
+                        <p class="bold">Restbetrag:</p>
+                        <p class="bold" id="balance">0 €</p>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        
+
+        
+        
+          
+        <button id="clear-all">Daten Löschen</button>
+        <button id="PDF" onclick="printPage()">PRINT / PDF</button>
+
+        <!-- Google Charts kütüphanesi -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <!-- jsPDF kütüphanesi için CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+
+    </div>
+
+  
+
+
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
