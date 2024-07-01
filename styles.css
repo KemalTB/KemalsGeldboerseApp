@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 700px;
     margin: 50px auto;
     padding: 20px;
     background-color: rgb(251, 116, 5);
@@ -23,14 +23,16 @@ h1, h2 {
 .forms-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .form-section {
     flex: 1;
-    margin: 10px;
-    min-width: 300px;
+    margin: 5px;
+    min-width: 200px;
 }
 
 form {
@@ -54,7 +56,7 @@ input[type="date"] {
 
 input[type="date"],
 input[type="number"] {
-    width: 48%;
+    width: 40%;
 }
 
 button {
@@ -73,13 +75,18 @@ button:hover {
 }
 
 table {
-    width: 100%;
+    width: 90%;
+    justify-content: center;
     border-collapse: collapse;
     margin-bottom: 20px;
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
 table, th, td {
     border: 1px solid #181818;
+    padding: 10px;
+    text-align: left;
 }
 
 th, td {
@@ -113,12 +120,13 @@ tfoot tr {
     flex-direction: column;
     align-items: flex-end;
     margin-bottom: 20px;
+    margin-right: 3%;
     /* background-color:beige; */
 }
 
 .summary-item {
     display: flex;
-    width: 350px;
+    width: 250px;
     justify-content: space-between;
     border: 2px solid black;
     margin-bottom: 5px;
@@ -153,27 +161,6 @@ tfoot tr {
     background-color:beige;
 }
 
-/* .container1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 40px;
-}
-
-.content {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-.chart-container {
-    position: relative;
-    width: 200px;
-    height: 300px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden; /* Grafik container'ın içindeki grafiklerin taşmasını önlemek için */
-}
 
 #chart_div {
     width: 100%;
@@ -208,17 +195,47 @@ td button:hover {
     background-color: #c9302c;
 }
 
-@media (max-width: 600px) {
-    .forms-container {
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 992px) {
+    .container {
+        max-width: 90%; /* Container'ı daraltalım */
+        padding: 15px;
     }
-
+    table {
+        max-width: 90%;
+        font-size: 12px;
+        overflow-x: auto; /* Yatay kaydırma ekleyelim */
+    }
     .summary {
-        align-items: center;
+        align-items: center; /* Özetleri sola hizalayalım */
     }
+}
 
-    .summary-item {
-        width: 100%;
+@media (max-width: 768px) {
+    .container {
+        max-width: 95%; /* Container'ı daha da daraltalım */
+        margin: 40px auto;
+        padding: 10px;
+    }
+    table {
+        max-width: 90%;
+        font-size: 10px;
+    }
+    .summary {
+        align-items: center; /* Özetleri sola hizalayalım */
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 98%; /* En dar halini ayarlayalım */
+        margin: 30px auto;
+        padding: 5px;
+    }
+    table {
+        max-width: 70%;
+        font-size: 8px;
+    }
+    .summary {
+        align-items: center; /* Özetleri sola hizalayalım */
     }
 }
